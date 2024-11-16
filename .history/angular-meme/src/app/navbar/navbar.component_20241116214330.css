@@ -1,0 +1,16 @@
+header{
+
+    height: 150px;
+    max-width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;    
+    background-color: #F7F6FB;
+}
+
+.brand{
+    font-size: 55px;
+    color:#300;
+    text-align: center;
+    
+}
