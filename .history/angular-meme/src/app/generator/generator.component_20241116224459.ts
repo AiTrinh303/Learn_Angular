@@ -12,14 +12,12 @@ import {FormsModule} from '@angular/forms'
 export class GeneratorComponent {
   topText: string = '';
   bottomText: string = '';
-  fileEvent: any;
+  fileEvent
 
 
   @ViewChild('memeCanvas', {static:false}) myCanvas:any;
 
   preview(e:any){
-    this.fileEvent = e;
-
     let canvas = this.myCanvas.nativeElement;
     let ctx = canvas.getContext('2d');
     let render = new FileReader();
@@ -39,7 +37,7 @@ export class GeneratorComponent {
     let canvas = this.myCanvas.nativeElement;
     let ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    this.preview(this.fileEvent)
+    this.preview()
     ctx.fillStyle = '#000000';
     ctx.font = '50px Comic Sans MS';
     ctx.textAlign = 'center';
