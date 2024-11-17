@@ -75,12 +75,7 @@ export class GeneratorComponent {
   }
 
   downloadImg(){
-    let canvas = this.myCanvas.nativeElement;
-    let image = canvas.toDataURL('image/png');
-    let link = document.createElement('a');
-    link.download = 'meme.png';
-    link.href = image;
-    link.click();
+    let canvas = this.myCanvas.nativeElement
   }
 
 }

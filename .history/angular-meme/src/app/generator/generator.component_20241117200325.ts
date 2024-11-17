@@ -42,7 +42,7 @@ export class GeneratorComponent {
       console.log(img);
       img.src = event.target?.result as string;
       img.onload = function () {
-        ctx.drawImage(img, 150, 200, 400, 600)
+        ctx.drawImage(img, 50, 150, 400, 400)
       }
     }
   }
@@ -72,15 +72,6 @@ export class GeneratorComponent {
   canvasBgColor($event: ColorEvent){
     this.backgroundColor = $event.color?.hex;
     this.writeText();
-  }
-
-  downloadImg(){
-    let canvas = this.myCanvas.nativeElement;
-    let image = canvas.toDataURL('image/png');
-    let link = document.createElement('a');
-    link.download = 'meme.png';
-    link.href = image;
-    link.click();
   }
 
 }

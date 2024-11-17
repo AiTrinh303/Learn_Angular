@@ -42,7 +42,7 @@ export class GeneratorComponent {
       console.log(img);
       img.src = event.target?.result as string;
       img.onload = function () {
-        ctx.drawImage(img, 150, 200, 400, 600)
+        ctx.drawImage(img, 50, 150, 600, 800)
       }
     }
   }
@@ -53,15 +53,14 @@ export class GeneratorComponent {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
     ctx.fillStyle = this.backgroundColor;
+    ctx.fillStyle = this.textColor;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     
-    ctx.fillStyle = this.textColor;
+    this.preview(this.fileEvent)
     ctx.font = '50px Comic Sans MS';
     ctx.textAlign = 'center';
     ctx.fillText(this.topText, canvas.width/2, 100);
     ctx.fillText(this.bottomText, canvas.width/2, 680);
-
-    this.preview(this.fileEvent)
   }
 
   canvasTextColor($event: ColorEvent){
@@ -72,15 +71,6 @@ export class GeneratorComponent {
   canvasBgColor($event: ColorEvent){
     this.backgroundColor = $event.color?.hex;
     this.writeText();
-  }
-
-  downloadImg(){
-    let canvas = this.myCanvas.nativeElement;
-    let image = canvas.toDataURL('image/png');
-    let link = document.createElement('a');
-    link.download = 'meme.png';
-    link.href = image;
-    link.click();
   }
 
 }
