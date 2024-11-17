@@ -3,20 +3,12 @@ import {ColorChromeModule} from 'ngx-color/chrome';
 import {FormsModule} from '@angular/forms'
 import { Color } from 'ngx-color';
 
-
-// Define the interface here
-interface ColorEvent {
-  color: {
-    hex: string;
-  };
-}
-
 @Component({
   selector: 'app-generator',
   standalone: true,
   imports: [ ColorChromeModule,FormsModule],
   templateUrl: './generator.component.html',
-  styleUrls: ['./generator.component.css']
+  styleUrl: './generator.component.css'
 })
 
 export class GeneratorComponent {
@@ -62,7 +54,7 @@ export class GeneratorComponent {
     ctx.fillText(this.bottomText, canvas.width/2, 680);
   }
 
-  canvasTextColor($event: ColorEvent){
+  canvasTextColor($event: CloseEvent){
     this.textColor = $event.color?.hex;
     this.writeText();
   }

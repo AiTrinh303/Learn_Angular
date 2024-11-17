@@ -4,19 +4,13 @@ import {FormsModule} from '@angular/forms'
 import { Color } from 'ngx-color';
 
 
-// Define the interface here
-interface ColorEvent {
-  color: {
-    hex: string;
-  };
-}
 
 @Component({
   selector: 'app-generator',
   standalone: true,
   imports: [ ColorChromeModule,FormsModule],
   templateUrl: './generator.component.html',
-  styleUrls: ['./generator.component.css']
+  styleUrl: './generator.component.css'
 })
 
 export class GeneratorComponent {

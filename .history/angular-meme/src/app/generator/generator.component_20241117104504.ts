@@ -3,20 +3,12 @@ import {ColorChromeModule} from 'ngx-color/chrome';
 import {FormsModule} from '@angular/forms'
 import { Color } from 'ngx-color';
 
-
-// Define the interface here
-interface ColorEvent {
-  color: {
-    hex: string;
-  };
-}
-
 @Component({
   selector: 'app-generator',
   standalone: true,
   imports: [ ColorChromeModule,FormsModule],
   templateUrl: './generator.component.html',
-  styleUrls: ['./generator.component.css']
+  styleUrl: './generator.component.css'
 })
 
 export class GeneratorComponent {
@@ -24,7 +16,7 @@ export class GeneratorComponent {
   bottomText: string = '';
   fileEvent: any;
   textColor: string = '#000000';
-  backgroundColor: string = '#F9F9F9';
+  
 
 
   @ViewChild('memeCanvas', {static:false}) myCanvas:any;
@@ -51,9 +43,6 @@ export class GeneratorComponent {
     let canvas = this.myCanvas.nativeElement;
     let ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = this.backgroundColor;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
     this.preview(this.fileEvent)
     ctx.fillStyle = this.textColor;
     ctx.font = '50px Comic Sans MS';
@@ -64,11 +53,6 @@ export class GeneratorComponent {
 
   canvasTextColor($event: ColorEvent){
     this.textColor = $event.color?.hex;
-    this.writeText();
-  }
-
-  canvasBgColor($event: ColorEvent){
-    this.backgroundColor = $event.color?.hex;
     this.writeText();
   }
 

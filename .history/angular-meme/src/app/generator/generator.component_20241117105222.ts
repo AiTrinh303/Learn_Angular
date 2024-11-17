@@ -16,7 +16,7 @@ interface ColorEvent {
   standalone: true,
   imports: [ ColorChromeModule,FormsModule],
   templateUrl: './generator.component.html',
-  styleUrls: ['./generator.component.css']
+  styleUrl: './generator.component.css'
 })
 
 export class GeneratorComponent {

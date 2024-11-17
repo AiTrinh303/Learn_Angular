@@ -19,21 +19,22 @@
                                 <label for="">Bottom Text</label>
                                 <input type="text" class="form-control" name="bottomText" [(ngModel)] = 'bottomText' (keyup)="writeText()">
                             </div>
-              <!-- Color Pickers -->
-              <div class="mt-5 row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="textColorPicker">Text Color</label>
-                    <color-chrome (onChangeComplete)="canvasTextColor($event)"></color-chrome>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="bgColorPicker">Background Color</label>
-                    <color-chrome (onChangeComplete)="canvasBgColor($event)"></color-chrome>
-                  </div>
-                </div>
-              </div>    
+
+                            <div class="mt-5 row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Text Color</label>
+                                        <color-chrome (onChangeComplete)="'canvasTextColor($event)"></color-chrome>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Background Color</label>
+                                        <color-chrome (onChangeComplete)="'canvasBgColor($event)"></color-chrome>
+
+                                    </div>
+                                </div>
+                            </div>     
                             
                             <button class="mt-5 btn btn-outline-primary btn-block">Download</button>
                         </form>
